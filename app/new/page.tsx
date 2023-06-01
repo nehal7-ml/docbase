@@ -22,8 +22,8 @@ export default async function Link({ params }: { params: { id: string } }) {
   } = await supabase.from("profiles").select("*").eq("id", user).single()
 
   return (
-    <div className="flex flex-col items-center min-h-screen pt-20 py-2">
-      <h1 className="text-4xl font-bold mb-4">New Link</h1>
+    <div className="flex min-h-screen flex-col items-center py-2 pt-20">
+      <h1 className="mb-4 text-4xl font-bold">New Link</h1>
       <LinkForm link={linkData!} user={userData!} />
     </div>
   )
