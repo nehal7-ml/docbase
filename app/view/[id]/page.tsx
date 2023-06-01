@@ -16,8 +16,8 @@ export default async function Doc({ params }: { params: { id: string } }) {
   const fullName = (link as any).user_id.full_name
 
   return (
-    <div className="flex flex-col items-center min-h-screen pt-20 py-2">
-      <h1 className="text-4xl font-bold mb-4">
+    <div className="flex min-h-screen flex-col items-center py-2 pt-20">
+      <h1 className="mb-4 text-4xl font-bold">
         {fullName && `${fullName} is sharing a document with you`}
       </h1>
       <ViewLinkForm link={link} />

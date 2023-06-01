@@ -42,15 +42,15 @@ export default async function Analytics({
     .eq("link_id", id)
 
   return (
-    <div className="flex flex-col items-center min-h-screen pt-20 py-2">
-      <h1 className="text-4xl font-bold mb-4">Your Views</h1>
+    <div className="flex min-h-screen flex-col items-center py-2 pt-20">
+      <h1 className="mb-4 text-4xl font-bold">Your Views</h1>
       <div className="flex-col md:flex">
         <div className="flex-1 space-y-4 p-8 pt-6">
           <div className="flex items-center justify-between space-y-2">
-            <div className="grid gap-4 grid-cols-1 md:grid-cols-2 w-full">
+            <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2">
               <Card className="w-full">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium pr-4">
+                  <CardTitle className="pr-4 text-sm font-medium">
                     Total Views
                   </CardTitle>
                   <Activity className="h-4 w-4 text-muted-foreground" />
@@ -61,7 +61,7 @@ export default async function Analytics({
               </Card>
               <Card className="w-full">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium pr-4">
+                  <CardTitle className="pr-4 text-sm font-medium">
                     Unique Views
                   </CardTitle>
                   <Users className="h-4 w-4 text-muted-foreground" />
