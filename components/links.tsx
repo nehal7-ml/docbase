@@ -17,7 +17,7 @@ export function Links({
   onDeleteLink: (linkId: string) => void
 }) {
   const handleCopyLink = (linkId: string) => {
-    const link = `${process.env.NEXT_PUBLIC_SUPABASE_ROOT}/${linkId}`
+    const link = `${process.env.NEXT_PUBLIC_SUPABASE_ROOT}/view/${linkId}`
     navigator.clipboard
       .writeText(link)
       .then(() => {
@@ -36,7 +36,7 @@ export function Links({
       {allLinks &&
         allLinks.map((link: any) => (
           <div className="flex items-center py-2" key={link.id}>
-            <div className="flex-1 ml-4 space-y-1">
+            <div className="ml-4 flex-1 space-y-1">
               <p className="text-sm font-medium leading-none">
                 {link.filename}
               </p>
@@ -50,7 +50,7 @@ export function Links({
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>
-                      <Activity className="h-4 w-4 ml-4 text-muted-foreground" />
+                      <Activity className="ml-4 h-4 w-4 text-muted-foreground" />
                     </TooltipTrigger>
                     <TooltipContent>View Analytics</TooltipContent>
                   </Tooltip>
@@ -63,7 +63,7 @@ export function Links({
                 <Tooltip>
                   <TooltipTrigger>
                     <Copy
-                      className="h-4 w-4 ml-4 text-muted-foreground"
+                      className="ml-4 h-4 w-4 text-muted-foreground"
                       onClick={() => handleCopyLink(link.id)}
                       style={{ cursor: "pointer" }}
                     />{" "}
@@ -77,7 +77,7 @@ export function Links({
                 <Tooltip>
                   <TooltipTrigger>
                     <Trash
-                      className="h-4 w-4 ml-4 text-muted-foreground"
+                      className="ml-4 h-4 w-4 text-muted-foreground"
                       onClick={() => onDeleteLink(link.id)}
                       style={{ cursor: "pointer" }}
                     />

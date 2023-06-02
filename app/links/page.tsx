@@ -41,18 +41,15 @@ export default function LinksPage() {
     setAllLinks(links)
   }
   return (
-    <div className="flex flex-col items-center pt-20 py-2">
-      <h1 className="text-4xl font-bold mb-4">Your Links</h1>
+    <div className="flex flex-col items-center py-2 pt-20">
+      <h1 className="mb-4 text-4xl font-bold">Your Links</h1>
       <div className="w-half">
         <Links allLinks={allLinks} onDeleteLink={deleteLink} />
       </div>
       <div className="mt-4">
         <Link href="/new">
           <Button
-            className="bg-[#9FACE6] text-white font-bold py-2 px-4 rounded w-full"
-            onClick={(e) => {
-              e.preventDefault()
-            }}
+            className="w-full rounded bg-[#9FACE6] px-4 py-2 font-bold text-white"
             size="sm"
           >
             <Plus className="mr-2 h-4 w-4" />
