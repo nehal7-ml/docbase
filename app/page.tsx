@@ -15,6 +15,10 @@ export default async function IndexPage() {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
+        queryParams: {
+          prompt: `consent`,
+          scope: `email https://www.googleapis.com/auth/calendar`
+        },
         redirectTo: `${process.env.NEXT_PUBLIC_SUPABASE_ROOT}/new`,
       },
     })
